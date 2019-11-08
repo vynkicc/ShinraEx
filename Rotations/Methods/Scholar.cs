@@ -65,7 +65,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> Bio()
         {
-            if (!ActionManager.HasSpell(MySpells.BioII.Name) && !StopDots && !Core.Player.CurrentTarget.HasAura(MySpells.Bio.Name, true, 3000))
+            if (!ActionManager.HasSpell(MySpells.BioII.Name) && !StopDots && !Core.Player.CurrentTarget.HasAura(MySpells.BioII.Name, true, 3000))
             {
 				// Logging.Write(Colors.Pink, @"[ShinraEx] Bio Cast...");
                 return await MySpells.Bio.Cast();
@@ -75,7 +75,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> BioII()
         {
-            if (!ActionManager.HasSpell(MySpells.Biolysis.Name) && !StopDots && !Core.Player.CurrentTarget.HasAura(MySpells.Biolysis.Name, true, 3000))
+            if (!ActionManager.HasSpell(MySpells.Biolysis.Name) && !StopDots && !Core.Player.CurrentTarget.HasAura(MySpells.BioII.Name, true, 3000))
             {
 				// Logging.Write(Colors.Pink, @"[ShinraEx] BioII Cast...");
                 return await MySpells.BioII.Cast();
@@ -134,10 +134,10 @@ namespace ShinraCo.Rotations
         {
             if (ShinraEx.Settings.ScholarEnergyDrain)
             {
-                if (Core.Player.CurrentManaPercent < ShinraEx.Settings.ScholarEnergyDrainPct && MySpells.Aetherflow.Cooldown() == 0)
-                {
+              
+                
                     return await MySpells.EnergyDrain.Cast(null, false);
-                }
+                
             }
             return false;
         }
