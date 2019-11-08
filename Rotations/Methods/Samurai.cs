@@ -86,7 +86,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> YukikazeDebuff()
         {
-            if (ActionManager.LastSpell.Name == MySpells.Hakaze.Name && !Core.Player.CurrentTarget.HasAura(819, false, 8000))
+            if (ActionManager.LastSpell.Name == MySpells.Hakaze.Name)
             {
                 return await MySpells.Yukikaze.Cast();
             }

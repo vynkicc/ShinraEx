@@ -27,7 +27,6 @@ namespace ShinraCo.Rotations
                     if (await Mangetsu()) return true;
                     if (await Oka()) return true;
                     if (await Fuga()) return true;
-                    if (await YukikazeDebuff()) return true;
                     if (await Shifu()) return true;
                     if (await Jinpu()) return true;
                     if (await Yukikaze()) return true;
@@ -47,8 +46,7 @@ namespace ShinraCo.Rotations
                     if (await Gekko()) return true;
                     if (await ShifuBuff()) return true;
                     if (await JinpuBuff()) return true;
-                    if (await YukikazeDebuff()) return true;
-                    if (await Shifu()) return true;
+                     if (await Shifu()) return true;
                     if (await Jinpu()) return true;
                     if (await Yukikaze()) return true;
                     if (await Enpi()) return true;
