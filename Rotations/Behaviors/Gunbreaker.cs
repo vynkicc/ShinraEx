@@ -12,14 +12,15 @@ namespace ShinraCo.Rotations
 
             if (await FatedCircle()) return true;
             if (await DemonSlaughter()) return true;
+            if (await DemonSlice()) return true;
             if (await WickedTalon()) return true;
             if (await SavageClaw()) return true;
             if (await SolidBarrel()) return true;
             if (await BrutalShell()) return true;
-               if (await GnashingFang()) return true;
+            if (await GnashingFang()) return true;
             if (await BurstStrike()) return true;
             if (await SonicBreak()) return true;
-            if (await DemonSlice()) return true;
+   
   
             return await KeenEdge();
         }
@@ -30,7 +31,9 @@ namespace ShinraCo.Rotations
 
         public override async Task<bool> CombatBuff()
         {
+            
 			if (await Superbolide()) return true;
+            if (await HeartofStone()) return true;
 			if (await Nebula()) return true;
 			if (await Rampart()) return true;
 			if (await Camouflage()) return true;

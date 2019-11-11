@@ -81,7 +81,7 @@ namespace ShinraCo.Rotations
 		
 		private async Task<bool> BurstStrike()
         {
-            if (Resource.Cartridge > 0)
+            if (Resource.Cartridge > 0 && Helpers.EnemiesNearPlayer(10) == 1)
             {
                 return await MySpells.BurstStrike.Cast();
             }
@@ -94,7 +94,7 @@ namespace ShinraCo.Rotations
 
 		private async Task<bool> DemonSlice()
         {
-			if(Helpers.EnemiesNearPlayer(5) > 2)
+			if(Helpers.EnemiesNearPlayer(10) >= 2)
 			{	
 				return await MySpells.DemonSlice.Cast();
 			}
@@ -122,7 +122,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> BowShock()
         {
-            if (!Core.Player.CurrentTarget.HasAura(MySpells.BowShock.Name) && Helpers.EnemiesNearPlayer(5) > 0)
+            if (!Core.Player.CurrentTarget.HasAura(MySpells.BowShock.Name) && Helpers.EnemiesNearPlayer(10) > 0)
             {
                 return await MySpells.BowShock.Cast();
             }
@@ -211,7 +211,7 @@ namespace ShinraCo.Rotations
 		
 		private async Task<bool> Camouflage()
         {
-			if(Helpers.EnemiesNearPlayer(5) > 2)
+			if(Helpers.EnemiesNearPlayer(5) > 1)
 			{	
 				return await MySpells.Camouflage.Cast();
 			}
@@ -220,12 +220,22 @@ namespace ShinraCo.Rotations
 		
 		private async Task<bool> Nebula()
         {
-			if (Helpers.EnemiesNearPlayer(5) > 5 && Core.Player.CurrentHealthPercent <= 70 && !Core.Player.HasAura(MySpells.Role.Rampart.Name))
+			if (Helpers.EnemiesNearPlayer(10) >= 3 && Core.Player.CurrentHealthPercent <= 70 && !Core.Player.HasAura(MySpells.Role.Rampart.Name))
 			{	
 				return await MySpells.Nebula.Cast();
 			}
 			return false;
 		}
+
+        private async Task<bool> HeartofStone()
+        {
+			if (Core.Player.CurrentHealthPercent <= 99)
+			{	
+				return await MySpells.HeartofStone.Cast();
+			}
+			return false;
+		}
+		
 		
 		private async Task<bool> Superbolide()
         {
@@ -242,12 +252,10 @@ namespace ShinraCo.Rotations
 		
 		private async Task<bool> Aurora()
         {
-			var target = ShinraEx.Settings.WhiteMagePartyHeal
-                ? Helpers.HealManager.FirstOrDefault(hm => hm.CurrentHealthPercent < 70)
-                : Core.Player.CurrentHealthPercent < 50 ? Core.Player : null;
-			if(target != null)
+
+			if(Core.Player.CurrentHealthPercent <= 70)
 			{
-				return await MySpells.Aurora.Cast(target);
+				return await MySpells.Aurora.Cast(Core.Player);
 			}				
 			return false;
 		}

@@ -11,7 +11,7 @@ namespace ShinraCo.Rotations
         {
             Helpers.Debug("Combat...");
             if (ShinraEx.Settings.RotationMode == Modes.Multi || ShinraEx.Settings.RotationMode == Modes.Smart &&
-                Helpers.EnemiesNearTarget(5) > 2)
+                Helpers.EnemiesNearTarget(10) > 2)
             {
                 return await Multi();
             }

@@ -265,5 +265,15 @@ namespace ShinraCo.Spells.Main
             SpellType = SpellType.Damage,
             CastType = CastType.Target
         };
+
+        public Spell HeartofStone { get; } = new Spell
+        {
+            Name = "HeartofStone",
+            ID = 16161,
+            Level = 68,
+            GCDType = GCDType.Off,
+            SpellType = SpellType.Buff,
+            CastType = CastType.Self
+        };
     }
 }

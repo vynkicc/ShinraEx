@@ -88,7 +88,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> AeroII()
         {
-            if (!StopDots && !Core.Player.CurrentTarget.HasAura(144, true, 3000))
+            if (!ActionManager.HasSpell(MySpells.Dia.Name) && !StopDots && !Core.Player.CurrentTarget.HasAura(144, true, 3000))
             {
                 return await MySpells.AeroII.Cast();
             }

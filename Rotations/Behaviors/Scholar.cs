@@ -15,6 +15,7 @@ namespace ShinraCo.Rotations
             if (await BroilIII()) return true;
             if (await BroilII()) return true;
             if (await Broil()) return true;
+             if (await EnergyDrain()) return true;
             return await Ruin();
         }
 

@@ -23,8 +23,7 @@ namespace ShinraCo.Rotations
                     if (await StoneIV()) return true;
                     if (await StoneIII()) return true;
                     if (await StoneII()) return true;
-                    if (await Stone()) return true;
-                    return await FluidAura();
+                    return await Stone();
                 }
 
                 case Modes.Single:
@@ -37,8 +36,7 @@ namespace ShinraCo.Rotations
                     if (await StoneIV()) return true;
                     if (await StoneIII()) return true;
                     if (await StoneII()) return true;
-                    if (await Stone()) return true;
-                    return await FluidAura();
+                    return await Stone();
                 }
 
                 case Modes.Multi:
