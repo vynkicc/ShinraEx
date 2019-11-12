@@ -20,7 +20,7 @@ namespace ShinraCo.Rotations
             if (await GnashingFang()) return true;
             if (await BurstStrike()) return true;
             if (await SonicBreak()) return true;
-   
+            if (await RoughDivide()) return true;
   
             return await KeenEdge();
         }
@@ -34,6 +34,7 @@ namespace ShinraCo.Rotations
             
 			if (await Superbolide()) return true;
             if (await HeartofStone()) return true;
+            if (await ArmsLength()) return true;
 			if (await Nebula()) return true;
 			if (await Rampart()) return true;
 			if (await Camouflage()) return true;

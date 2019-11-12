@@ -26,11 +26,9 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> RoughDivide()
         {
-            if (Helpers.TargetDistance(Core.Player,3))
-            {
+   
                 return await MySpells.RoughDivide.Cast();
-            }
-            return false;
+
         }
 
         #endregion
@@ -62,7 +60,7 @@ namespace ShinraCo.Rotations
 
 		private async Task<bool> SonicBreak()
         {
-            if (!Core.Player.CurrentTarget.HasAura(MySpells.SonicBreak.Name))
+            if (!Core.Player.CurrentTarget.HasAura(MySpells.SonicBreak.Name) && Helpers.EnemiesNearPlayer(10) == 1)
             {
                 return await MySpells.SonicBreak.Cast();
             }
@@ -135,7 +133,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> GnashingFang()
         {
-            if (Resource.Cartridge > 0)
+            if (Resource.Cartridge > 0 && Helpers.EnemiesNearPlayer(10) == 1)
             {
                 return await MySpells.GnashingFang.Cast();
             }
@@ -211,7 +209,7 @@ namespace ShinraCo.Rotations
 		
 		private async Task<bool> Camouflage()
         {
-			if(Helpers.EnemiesNearPlayer(5) > 1)
+			if(Helpers.EnemiesNearPlayer(10) > 1)
 			{	
 				return await MySpells.Camouflage.Cast();
 			}
@@ -255,7 +253,7 @@ namespace ShinraCo.Rotations
 
 			if(Core.Player.CurrentHealthPercent <= 70)
 			{
-				return await MySpells.Aurora.Cast(Core.Player);
+				return await MySpells.Aurora.Cast();
 			}				
 			return false;
 		}
@@ -266,12 +264,21 @@ namespace ShinraCo.Rotations
 		
 		private async Task<bool> Rampart()
         {
-			if(Helpers.EnemiesNearPlayer(5) > 4 && Core.Player.CurrentHealthPercent <= 70 && !Core.Player.HasAura(MySpells.Nebula.Name))
+			if(Helpers.EnemiesNearPlayer(5) > 2 && Core.Player.CurrentHealthPercent <= 70 && !Core.Player.HasAura(MySpells.Nebula.Name))
 			{	
 				return await MySpells.Role.Rampart.Cast();
 			}
 			return false;
 		}
+
+        private async Task<bool> ArmsLength()
+        {
+            if(Helpers.EnemiesNearPlayer(5) > 3)
+            {
+                return await MySpells.Role.ArmsLength.Cast();
+            }
+         			return false;
+        }
 
         #endregion
 

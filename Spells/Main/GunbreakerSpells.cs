@@ -123,7 +123,7 @@ namespace ShinraCo.Spells.Main
             Level = 45,
             GCDType = GCDType.Off,
             SpellType = SpellType.Buff,
-            CastType = CastType.Target
+            CastType = CastType.Self
         };
 		
 		public Spell Superbolide { get; } = new Spell
@@ -275,5 +275,7 @@ namespace ShinraCo.Spells.Main
             SpellType = SpellType.Buff,
             CastType = CastType.Self
         };
+
+
     }
 }
