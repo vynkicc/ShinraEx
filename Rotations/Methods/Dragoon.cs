@@ -88,7 +88,7 @@ namespace ShinraCo.Rotations
             {
                 var count = ShinraEx.Settings.CustomAoE ? ShinraEx.Settings.CustomAoECount : 3;
 
-                if (ShinraEx.Settings.RotationMode == Modes.Multi || Helpers.EnemiesNearTarget(5) >= count)
+                if (ShinraEx.Settings.RotationMode == Modes.Multi || Helpers.EnemiesNearTarget(10) >= count)
                 {
                     return await MySpells.DoomSpike.Cast();
                 }
@@ -102,9 +102,24 @@ namespace ShinraCo.Rotations
             {
                 var count = ShinraEx.Settings.CustomAoE ? ShinraEx.Settings.CustomAoECount : 3;
 
-                if (ShinraEx.Settings.RotationMode == Modes.Multi || Helpers.EnemiesNearTarget(5) >= count)
+                if (ShinraEx.Settings.RotationMode == Modes.Multi || Helpers.EnemiesNearTarget(10) >= count)
                 {
                     return await MySpells.SonicThrust.Cast();
+                }
+            }
+            return false;
+        }
+
+        
+        private async Task<bool> CoerthanTorment()
+        {
+            if (ActionManager.LastSpell.Name == MySpells.SonicThrust.Name && Core.Player.HasAura(MySpells.Disembowel.Name))
+            {
+                var count = ShinraEx.Settings.CustomAoE ? ShinraEx.Settings.CustomAoECount : 3;
+
+                if (ShinraEx.Settings.RotationMode == Modes.Multi || Helpers.EnemiesNearTarget(10) >= count)
+                {
+                    return await MySpells.CoerthanTorment.Cast();
                 }
             }
             return false;

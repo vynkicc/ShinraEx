@@ -15,6 +15,7 @@ namespace ShinraCo.Rotations
                 {
                     Helpers.Debug("Combat - smart...");
                     if (ShinraEx.Settings.DragoonOpener) { if (await Helpers.ExecuteOpener()) return true; }
+                    if (await CoerthanTorment()) return true;
                     if (await SonicThrust()) return true;
                     if (await DoomSpike()) return true;
                     if (await WheelingThrust()) return true;
@@ -42,6 +43,7 @@ namespace ShinraCo.Rotations
                 case Modes.Multi:
                 {
                     Helpers.Debug("Combat - multi...");
+                    if (await CoerthanTorment()) return true;
                     if (await SonicThrust()) return true;
                     return await DoomSpike();
                 }

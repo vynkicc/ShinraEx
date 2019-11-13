@@ -257,8 +257,8 @@ namespace ShinraCo.Spells.Main
             ID = 16477,
             Level = 72,
             GCDType = GCDType.On,
-            SpellType = SpellType.Cooldown,
-            CastType = CastType.SelfLocation
+            SpellType = SpellType.AoE,
+            CastType = CastType.Target
         };
         
         public Spell HighJump { get; } = new Spell
