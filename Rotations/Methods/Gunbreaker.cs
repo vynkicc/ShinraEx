@@ -283,9 +283,12 @@ namespace ShinraCo.Rotations
         
         private async Task<bool> RoyalGuard()
         {
+            if (Core.Player.HasAura(392, true))
+            {
+                return false;
+            }
 
-                return await MySpells.RoyalGuard.Cast();
-
+            return await MySpells.RoyalGuard.Cast();
         }
 
         #endregion
@@ -297,5 +300,7 @@ namespace ShinraCo.Rotations
         #region Custom
 
         #endregion
+
+                private static bool RoyalGuardStance => Core.Player.HasAura(392);
     }
 }

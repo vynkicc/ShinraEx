@@ -67,8 +67,8 @@ namespace ShinraCo.Rotations
 
         public override async Task<bool> PreCombatBuff()
         {
-            if (await RoyalGuard()) return true;
-            return await ShinraEx.SummonChocobo();
+            if (await ShinraEx.SummonChocobo()) return true;
+            return(await RoyalGuard());
                    
         }
 
