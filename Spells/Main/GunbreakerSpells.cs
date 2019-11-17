@@ -268,7 +268,7 @@ namespace ShinraCo.Spells.Main
 
         public Spell HeartofStone { get; } = new Spell
         {
-            Name = "HeartofStone",
+            Name = "Heart of Stone",
             ID = 16161,
             Level = 68,
             GCDType = GCDType.Off,
@@ -277,7 +277,7 @@ namespace ShinraCo.Spells.Main
         };
         public Spell RoyalGuard { get; } = new Spell
         {
-            Name = "RoyalGuard",
+            Name = "Royal Guard",
             ID = 16142,
             Level = 10,
             GCDType = GCDType.Off,

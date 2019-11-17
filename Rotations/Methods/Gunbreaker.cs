@@ -218,7 +218,7 @@ namespace ShinraCo.Rotations
 		
 		private async Task<bool> Nebula()
         {
-			if (Helpers.EnemiesNearPlayer(10) >= 3 && Core.Player.CurrentHealthPercent <= 70 && !Core.Player.HasAura(MySpells.Role.Rampart.Name))
+			if (Helpers.EnemiesNearPlayer(10) >= 3 && Core.Player.CurrentHealthPercent <= 65 && !Core.Player.HasAura(MySpells.Role.Rampart.Name))
 			{	
 				return await MySpells.Nebula.Cast();
 			}
@@ -227,7 +227,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> HeartofStone()
         {
-			if (Core.Player.CurrentHealthPercent <= 99)
+			if (Core.Player.CurrentHealthPercent <= 95)
 			{	
 				return await MySpells.HeartofStone.Cast();
 			}
@@ -283,7 +283,7 @@ namespace ShinraCo.Rotations
         
         private async Task<bool> RoyalGuard()
         {
-            if (Core.Player.HasAura(392, true))
+            if (Core.Player.HasAura("Royal Guard", true))
             {
                 return false;
             }
@@ -301,6 +301,6 @@ namespace ShinraCo.Rotations
 
         #endregion
 
-                private static bool RoyalGuardStance => Core.Player.HasAura(392);
+                private static bool RoyalGuardStance => Core.Player.HasAura("Royal Guard");
     }
 }

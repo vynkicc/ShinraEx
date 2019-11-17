@@ -39,7 +39,7 @@ namespace ShinraCo.Rotations
 			if (await Rampart()) return true;
 			if (await Camouflage()) return true;
 			if (await Aurora()) return true;
-
+            if (await RoyalGuard()) return true;
             if (await AbdomenTear()) return true;
             if (await JugularRip()) return true;
 
