@@ -67,7 +67,9 @@ namespace ShinraCo.Rotations
 
         public override async Task<bool> PreCombatBuff()
         {
+            if (await RoyalGuard()) return true;
             return await ShinraEx.SummonChocobo();
+                   
         }
 
         #endregion

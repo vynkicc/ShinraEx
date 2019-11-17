@@ -280,6 +280,14 @@ namespace ShinraCo.Rotations
          			return false;
         }
 
+        
+        private async Task<bool> RoyalGuard()
+        {
+
+                return await MySpells.RoyalGuard.Cast();
+
+        }
+
         #endregion
 
         #region PVP

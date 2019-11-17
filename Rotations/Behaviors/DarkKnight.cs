@@ -64,9 +64,9 @@ namespace ShinraCo.Rotations
         {
             Helpers.Debug("Combat - multi...");
             if (await Interject()) return true;
-            if (await Unleash()) return true;
-            if (await StalwartSoul()) return true;
             if (await Quietus()) return true;
+            if (await StalwartSoul()) return true;
+            if (await Unleash()) return true;
             //if (await Bloodspiller()) return true;
             if (await EdgeOfDarkness()) return true;
             if (await FloodOfDarkness()) return true;

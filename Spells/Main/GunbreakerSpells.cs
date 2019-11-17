@@ -275,7 +275,15 @@ namespace ShinraCo.Spells.Main
             SpellType = SpellType.Buff,
             CastType = CastType.Self
         };
-
+        public Spell RoyalGuard { get; } = new Spell
+        {
+            Name = "RoyalGuard",
+            ID = 16142,
+            Level = 10,
+            GCDType = GCDType.Off,
+            SpellType = SpellType.Buff,
+            CastType = CastType.Self
+        };
 
     }
 }
