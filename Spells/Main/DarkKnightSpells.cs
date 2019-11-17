@@ -228,7 +228,7 @@ namespace ShinraCo.Spells.Main
             Level = 72,
             GCDType = GCDType.On,
             SpellType = SpellType.AoE,
-            CastType = CastType.Target
+            CastType = CastType.Self
         };
 
       
@@ -240,7 +240,7 @@ namespace ShinraCo.Spells.Main
             Level = 74,
             GCDType = GCDType.Off,
             SpellType = SpellType.AoE,
-            CastType = CastType.TargetLocation
+            CastType = CastType.Target
         };
 
         public Spell EdgeOfShadow { get; } = new Spell

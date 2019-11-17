@@ -64,15 +64,16 @@ namespace ShinraCo.Rotations
         {
             Helpers.Debug("Combat - multi...");
             if (await Interject()) return true;
+            if (await AbyssalDrain()) return true;
             if (await Quietus()) return true;
             if (await StalwartSoul()) return true;
             if (await Unleash()) return true;
             //if (await Bloodspiller()) return true;
-            if (await EdgeOfDarkness()) return true;
+            //if (await EdgeOfDarkness()) return true;
             if (await FloodOfDarkness()) return true;
             if (await CarveAndSpit()) return true;
             if (await Plunge()) return true;
-            if (await AbyssalDrain()) return true;
+
 
 
             //if (await SpinningSlash()) return true;
@@ -103,7 +104,7 @@ namespace ShinraCo.Rotations
             if (ShinraEx.Settings.DarkKnightOpener) { if (await Helpers.ExecuteOpener()) return true; }
             if (await LivingShadow()) return true;
             if (await ArmsLength()) return true;
-            if (await Grit()) return true;
+            //if (await Grit()) return true;
             if (await LivingDead()) return true;
             if (await ShadowWall()) return true;
             if (await BlackestNight()) return true;

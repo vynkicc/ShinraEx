@@ -38,11 +38,9 @@ namespace ShinraCo.Rotations
         {
             if (ActionManager.LastSpell.Name == MySpells.HardSlash.Name)
             {
-                if (ShinraEx.Settings.TankMode == TankModes.DPS && ActionManager.HasSpell(MySpells.Souleater.Name) ||
-                    Core.Player.CurrentManaPercent < 40)
-                {
+
                     return await MySpells.SyphonStrike.Cast();
-                }
+                
             }
             return false;
         }
@@ -70,7 +68,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> FloodOfDarkness()
         {
-            if (Core.Player.ClassLevel >= 74 && Core.Player.CurrentMana > 3500)
+            if (Core.Player.ClassLevel >= 74 && Core.Player.CurrentMana > 6000)
             {
                 return await MySpells.FloodOfShadow.Cast();
             }
@@ -85,7 +83,7 @@ namespace ShinraCo.Rotations
         private async Task<bool> EdgeOfDarkness()
         {
 
-            if (Core.Player.ClassLevel >= 74 && Core.Player.CurrentMana > 3500)
+            if (Core.Player.ClassLevel >= 74 && Core.Player.CurrentMana > 6000)
             {
                 return await MySpells.EdgeOfShadow.Cast();
             }
@@ -132,7 +130,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> Unleash()
         {
-            if (Core.Player.CurrentManaPercent > 30)
+            if (Helpers.EnemiesNearTarget(10) >= 2)
             {
                 return await MySpells.Unleash.Cast();
             }
@@ -141,12 +139,9 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> AbyssalDrain()
         {
-            if (Core.Player.CurrentManaPercent > 30 || Core.Player.CurrentHealthPercent < 30)
-            {
-                          
+                
                 return await MySpells.AbyssalDrain.Cast();
-            }
-            return false;
+           
         }
 
 
@@ -163,7 +158,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> Quietus()
         {
-            if (ShinraEx.Settings.DarkKnightQuietus && Core.Player.CurrentManaPercent < 70 && BloodValue >= 50)
+            if (ShinraEx.Settings.DarkKnightQuietus && BloodValue >= 50)
             {
                 var count = ShinraEx.Settings.CustomAoE ? ShinraEx.Settings.CustomAoECount : 3;
 
