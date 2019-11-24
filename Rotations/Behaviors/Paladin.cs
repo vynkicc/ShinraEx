@@ -17,9 +17,9 @@ namespace ShinraCo.Rotations
                     if (ShinraEx.Settings.PaladinOpener) { if (await Helpers.ExecuteOpener()) return true; }
                     if (await LowBlow()) return true;
                     if (await Interject()) return true;
-                    if (await TotalEclipse()) return true;
-                    if (await Prominence()) return true;
-                    if (await HolyCircle()) return true;
+					if (await HolyCircle()) return true;
+					if (await Prominence()) return true;
+                    if (await TotalEclipse()) return true;                  
                     if (await HolySpirit()) return true;
                     if (await Atonement()) return true;
                     if (await RiotBlade()) return true;
@@ -109,10 +109,8 @@ namespace ShinraCo.Rotations
 
         public override async Task<bool> Pull()
         {
-            Helpers.Debug("Pull...");
-            if (ShinraEx.Settings.PaladinOpener) { if (await Helpers.ExecuteOpener()) return true; }
-            if (await Provoke()) return true;
             if (await ShieldLob()) return true;
+			if (await Intervene()) return true;
             return await Combat();
         }
 

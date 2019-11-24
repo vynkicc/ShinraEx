@@ -57,7 +57,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> ShadowFang()
         {
-            if (ActionManager.LastSpell.Name != MySpells.GustSlash.Name || !UseShadowFang) return false;
+            if (ActionManager.LastSpell.Name != MySpells.SpinningEdge.Name || !UseShadowFang) return false;
 
             return await MySpells.ShadowFang.Cast();
         }
@@ -68,9 +68,18 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> DeathBlossom()
         {
-            if (Core.Player.CurrentTPPercent > 40)
+            if (Helpers.EnemiesNearTarget(5) > 2)
             {
                 return await MySpells.DeathBlossom.Cast();
+            }
+            return false;
+        }
+
+        private async Task<bool> HakkeMujinsatsu()
+        {
+            if (ActionManager.LastSpell.Name == MySpells.DeathBlossom.Name)
+            {
+                return await MySpells.HakkeMujinsatsu.Cast();
             }
             return false;
         }

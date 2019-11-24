@@ -88,11 +88,18 @@ namespace ShinraCo.Rotations
         
         private async Task<bool> ShieldLob()
         {
-            if (Core.Player.TargetDistance(10) && ShinraEx.Settings.TankMode == TankModes.Enmity)
+            if (Helpers.TargetDistance(Core.Player, 10) && Core.Player.HasAura("Iron Will"))
             {
                 return await MySpells.ShieldLob.Cast();
             }
             return false;
+        }
+
+        private async Task<bool> Intervene()
+        {
+
+                return await MySpells.Intervene.Cast();
+
         }
 
         #endregion
@@ -111,10 +118,8 @@ namespace ShinraCo.Rotations
         }
 
         private async Task<bool> Prominence()
-        {
-            var count = ShinraEx.Settings.CustomAoE ? ShinraEx.Settings.CustomAoECount : 5;
-            
-            if (ShinraEx.Settings.PaladinProminence && Core.Player.CurrentManaPercent < 30 && Helpers.EnemiesNearTarget(5) >= count)
+        {           
+            if (ActionManager.LastSpell.Name == MySpells.TotalEclipse.Name)
             {
                 return await MySpells.Prominence.Cast();
             }
@@ -123,7 +128,7 @@ namespace ShinraCo.Rotations
         
         private async Task<bool> HolyCircle()
         {
-            var count = ShinraEx.Settings.CustomAoE ? ShinraEx.Settings.CustomAoECount : 5;
+            var count = ShinraEx.Settings.CustomAoE ? ShinraEx.Settings.CustomAoECount : 3;
             
             if (ShinraEx.Settings.PaladinHolyCircle && Core.Player.CurrentManaPercent < 20 && Helpers.EnemiesNearTarget(5) >= count)
             {

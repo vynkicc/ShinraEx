@@ -209,7 +209,7 @@ namespace ShinraCo.Rotations
 		
 		private async Task<bool> Camouflage()
         {
-			if(Helpers.EnemiesNearPlayer(10) > 1)
+			if(Helpers.EnemiesNearPlayer(10) > 1 && Core.Player.CurrentHealthPercent <= 85)
 			{	
 				return await MySpells.Camouflage.Cast();
 			}

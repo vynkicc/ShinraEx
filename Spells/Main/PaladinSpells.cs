@@ -258,7 +258,7 @@ namespace ShinraCo.Spells.Main
             ID = 16461,
             Level = 74,
             GCDType = GCDType.Off,
-            SpellType = SpellType.Buff,
+            SpellType = SpellType.Damage,
             CastType = CastType.Target
         };
         

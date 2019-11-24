@@ -125,6 +125,16 @@ namespace ShinraCo.Spells.Main
             SpellType = SpellType.AoE,
             CastType = CastType.Self
         };
+		
+        public Spell HakkeMujinsatsu { get; } = new Spell
+        {
+            Name = "Hakke Mujinsatsu",
+            ID = 16488,
+            Level = 52,
+            GCDType = GCDType.On,
+            SpellType = SpellType.AoE,
+            CastType = CastType.Self
+        };		
     }
 
     public class NinjaSpells : RogueSpells

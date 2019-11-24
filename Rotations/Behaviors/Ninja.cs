@@ -21,6 +21,7 @@ namespace ShinraCo.Rotations
                     if (await Katon()) return true;
                     if (await Suiton()) return true;
                     if (await FumaShuriken()) return true;
+					if (await HakkeMujinsatsu()) return true;
                     if (await DeathBlossom()) return true;
                     if (await Duality()) return true;
                     if (await DualityActive()) return true;
@@ -56,6 +57,7 @@ namespace ShinraCo.Rotations
                     if (await Doton()) return true;
                     if (await Katon()) return true;
                     if (await FumaShuriken()) return true;
+					if (await HakkeMujinsatsu()) return true;
                     if (await DeathBlossom()) return true;
                     if (await Duality()) return true;
                     if (await DualityActive()) return true;
