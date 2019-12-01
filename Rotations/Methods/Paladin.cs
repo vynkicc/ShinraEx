@@ -130,7 +130,7 @@ namespace ShinraCo.Rotations
         {
             var count = ShinraEx.Settings.CustomAoE ? ShinraEx.Settings.CustomAoECount : 3;
             
-            if (ShinraEx.Settings.PaladinHolyCircle && Core.Player.CurrentManaPercent < 20 && Helpers.EnemiesNearTarget(5) >= count)
+            if (ShinraEx.Settings.PaladinHolyCircle && Core.Player.CurrentManaPercent > 20 && Helpers.EnemiesNearTarget(10) >= count)
             {
                 return await MySpells.HolyCircle.Cast();
             }

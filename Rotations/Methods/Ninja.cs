@@ -565,7 +565,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> TrueNorth()
         {
-            if (ShinraEx.Settings.NinjaTrueNorth)
+            if (ShinraEx.Settings.NinjaTrueNorth && (TrickCooldown<=7000) && !Core.Player.HasAura(MySpells.Role.TrueNorth.Name))
             {
                 return await MySpells.Role.TrueNorth.Cast();
             }

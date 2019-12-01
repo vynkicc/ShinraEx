@@ -49,6 +49,7 @@ namespace ShinraCo.Rotations
                 case Modes.Multi:
                 {
                     Helpers.Debug("Combat - multi...");
+                    if (await Requiescat()) return true;
                     if (await TotalEclipse()) return true;
                     if (await Prominence()) return true;
                     if (await HolyCircle()) return true;

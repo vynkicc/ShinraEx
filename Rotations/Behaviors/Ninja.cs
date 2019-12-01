@@ -82,6 +82,7 @@ namespace ShinraCo.Rotations
             if (await ShinraEx.SummonChocobo()) return true;
             if (await ShinraEx.ChocoboStance()) return true;
             if (ShinraEx.Settings.NinjaOpener) { if (await Helpers.ExecuteOpener()) return true; }
+                   if (await TrueNorth()) return true;
             if (await ShadeShift()) return true;
             if (await Shukuchi()) return true;
             if (await Assassinate()) return true;
@@ -93,7 +94,7 @@ namespace ShinraCo.Rotations
             if (await HellfrogMedium()) return true;
             if (await Bhavacakra()) return true;
             if (await TenChiJin()) return true;
-            if (await TrueNorth()) return true;
+     
             if (await Invigorate()) return true;
             await Helpers.UpdateParty();
             return await Goad();
