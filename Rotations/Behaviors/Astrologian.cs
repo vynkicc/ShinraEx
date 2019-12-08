@@ -17,8 +17,8 @@ namespace ShinraCo.Rotations
                     if (await EarthlyStar()) return true;
                     if (await Gravity()) return true;
                     if (await CombustIII()) return true;
-                    if (await CombustII()) return true;
-                    if (await Combust()) return true;
+                //    if (await CombustII()) return true;
+                //    if (await Combust()) return true;
                     if (await MaleficIV()) return true;
                     if (await MaleficIII()) return true;
                     if (await MaleficII()) return true;
@@ -29,8 +29,8 @@ namespace ShinraCo.Rotations
                 {
                     Helpers.Debug("Combat - single ...");
                     if (await CombustIII()) return true;
-                    if (await CombustII()) return true;
-                    if (await Combust()) return true;
+                 //   if (await CombustII()) return true;
+                //    if (await Combust()) return true;
                     if (await MaleficIV()) return true;
                     if (await MaleficIII()) return true;
                     if (await MaleficII()) return true;
