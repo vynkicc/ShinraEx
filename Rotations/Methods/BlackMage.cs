@@ -88,7 +88,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> Xenoglossy()
         {
-            if (Resource.PolyglotStatus)
+            if (Resource.PolyglotStatus && UmbralIce)
             {
                 return await MySpells.Xenoglossy.Cast();
             }
@@ -97,7 +97,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> Foul()
         {
-            if (UmbralIce)
+            if (UmbralIce && (Helpers.EnemiesNearPlayer(5)>2 || Core.Player.ClassLevel < 80))
             {
                 return await MySpells.Foul.Cast();
             }
@@ -288,7 +288,7 @@ namespace ShinraCo.Rotations
 
         private async Task<bool> Convert()
         {
-            if (ShinraEx.Settings.BlackMageConvert && AstralFire && ActionManager.LastSpell.Name == MySpells.FireIII.Name)
+            if (ShinraEx.Settings.BlackMageConvert && AstralFire && ActionManager.LastSpell.Name == MySpells.Despair.Name)
             {
                 return await MySpells.Convert.Cast();
             }
